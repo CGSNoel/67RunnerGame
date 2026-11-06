@@ -1,50 +1,74 @@
 ---
 layout: contact
-title: Contact & Support - 67Runner
+title: "Contact & Support - 67Runner"
 description: Contact and support for 67Runner.
 permalink: /contact/
 ---
 
 # Contact &amp; Support
 
-Need help with 67Runner or want to ask about privacy, purchases, or legal matters? Use the contact details below.
+Use this form for technical support, purchase issues, or privacy and data requests about 67Runner.
 
-<div class="notice">
-    <strong>Before publishing:</strong> replace every bracketed placeholder on this site, including <span class="placeholder">[EMAIL]</span>, <span class="placeholder">[LEGAL ENTITY NAME]</span>, and <span class="placeholder">[BUSINESS ADDRESS, COUNTRY]</span>.
-</div>
+Apple and Google handle refunds for purchases made through their stores. Use this form for game-related purchase delivery issues or other support questions.
 
-<div class="contact-grid">
-    <article class="contact-card">
-        <h2>Game support</h2>
-        <p>For gameplay problems, bug reports, or technical support, email:</p>
-        <a class="contact-email" href="mailto:[EMAIL]">[EMAIL]</a>
-        <p>Include your device model, operating-system version, game version, and a short description of the issue. Please do not send passwords or payment-card details.</p>
-    </article>
+<form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="2b263805-55f2-499e-a51e-209e6ef6c119">
+    <input type="hidden" name="subject" value="67Runner support request">
+    <input type="hidden" name="from_name" value="67Runner website">
 
-    <article class="contact-card">
-        <h2>Purchases and refunds</h2>
-        <p>For a refund, contact the Apple App Store or Google Play, depending on where the purchase was made. Contact us for problems with the game's delivery of a purchase after the store has confirmed it.</p>
-        <a class="contact-email" href="mailto:[EMAIL]">[EMAIL]</a>
-    </article>
-</div>
+    <div class="form-row">
+        <div class="form-field">
+            <label for="contact-name">Name <span class="form-optional">(optional)</span></label>
+            <input id="contact-name" name="name" type="text" autocomplete="name">
+        </div>
 
-## Privacy and data requests
+        <div class="form-field">
+            <label for="contact-email">Email address</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required>
+        </div>
+    </div>
 
-Use the same address for privacy questions or requests to access, correct, or delete data associated with the game. If available, include your platform and in-game player identifier. We will use the information in your request only to identify and handle the request, subject to the [Privacy Policy]({{ '/privacy/' | relative_url }}).
+    <div class="form-field">
+        <label for="contact-topic">Topic</label>
+        <select id="contact-topic" name="topic" required>
+            <option value="" selected disabled>Select a topic</option>
+            <option value="technical-support">Technical support</option>
+            <option value="purchase-issue">Purchase issue</option>
+            <option value="privacy-or-data-request">Privacy or data request</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
 
-The game may use anonymous authentication and online services when those features are enabled and permitted by the player's privacy settings. A request sent from this page is the support route for those services; it is not a replacement for an in-game consent or privacy-options flow.
+    <div class="form-field">
+        <label for="contact-message">Message</label>
+        <p id="contact-message-help" class="form-field-hint">For technical issues, include your device model, operating-system version, game version, and a description of what happened. Do not include passwords or payment-card details.</p>
+        <textarea id="contact-message" name="message" rows="14" aria-describedby="contact-message-help" required></textarea>
+    </div>
 
-## Developer and legal information
+    <div class="h-captcha" data-captcha="true" data-lang="en" data-theme="dark"></div>
+    <p id="captcha-error" class="form-error" role="alert" tabindex="-1" hidden>Please complete the captcha before submitting the form.</p>
 
-<dl class="info-list">
-    <dt>Developer / publisher</dt>
-    <dd>Papanoël Games</dd>
-    <dt>Legal name</dt>
-    <dd class="placeholder">[LEGAL ENTITY NAME]</dd>
-    <dt>Business address</dt>
-    <dd class="placeholder">[BUSINESS ADDRESS, COUNTRY]</dd>
-    <dt>Support email</dt>
-    <dd><a href="mailto:[EMAIL]">[EMAIL]</a></dd>
-</dl>
+    <button type="submit" class="form-submit">Send message</button>
 
-If the applicable jurisdiction requires an imprint or additional business disclosures, complete this section before the site is published.
+    <p class="form-privacy-note">
+        We use the information you submit to respond to your request. Web3Forms processes the submission on our behalf, and hCaptcha helps protect the form from abuse. See the <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a> for information about personal-data handling and your rights.
+    </p>
+</form>
+
+<script>
+    const contactForm = document.getElementById('contact-form');
+    const captchaError = document.getElementById('captcha-error');
+
+    contactForm.addEventListener('submit', event => {
+        const captchaResponse = contactForm.querySelector('textarea[name="h-captcha-response"]');
+
+        if (!captchaResponse || !captchaResponse.value) {
+            event.preventDefault();
+            captchaError.hidden = false;
+            captchaError.focus();
+        } else {
+            captchaError.hidden = true;
+        }
+    });
+</script>
+<script src="https://web3forms.com/client/script.js" async defer></script>

@@ -24,6 +24,8 @@ Detail how the data helps run the game, provides customer support, or processes 
 
 If you use Unity, Firebase, AdMob, or Apple/Google Game Centers, list them here as they track data independently.
 
+The website contact form uses Web3Forms to receive and forward submissions and hCaptcha to help protect the form from abuse. Web3Forms' [Privacy Policy](https://web3forms.com/privacy) and hCaptcha's [Privacy Policy](https://www.hcaptcha.com/privacy) describe their handling of information.
+
 ## 4. Your Rights
 
 Explain how users can request data deletion or opt-out of tracking under GDPR or CCPA frameworks.
@@ -32,4 +34,4 @@ Explain how users can request data deletion or opt-out of tracking under GDPR or
 
 For support or privacy requests, use our [Contact &amp; Support]({{ '/contact/' | relative_url }}) page.
 
-If you have any questions about this Privacy Policy, you can contact us at: **[EMAIL]**
+If you have any questions about this Privacy Policy, use the [Contact &amp; Support]({{ '/contact/' | relative_url }}) form and select the “Privacy or data request” topic. The provider's legally required contact details are listed in the [Impressum]({{ '/impressum/' | relative_url }}).

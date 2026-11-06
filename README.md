@@ -26,3 +26,4 @@ The generated legal pages are available at:
 - `/privacy/`
 - `/terms/`
 - `/contact/`
+- `/impressum/`

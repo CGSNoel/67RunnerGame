@@ -1,0 +1,15 @@
+title: 67Runner
+description: The official website for 67Runner by Papanoël Games.
+
+# This repository is a project site. Change this to "" if a custom domain or
+# username.github.io site is configured for GitHub Pages.
+url: ""
+baseurl: "/67RunnerGame"
+
+permalink: pretty
+markdown: kramdown
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
